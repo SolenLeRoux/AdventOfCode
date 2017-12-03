@@ -1,3 +1,6 @@
+import sys
+sys.dont_write_bytecode = True
+
 TEST_SET_1 = {
     """5 1 9 5
     7 5 3

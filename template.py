@@ -1,3 +1,6 @@
+import sys
+sys.dont_write_bytecode = True
+
 TEST_SET_1 = {}
 
 TEST_SET_2 = {}

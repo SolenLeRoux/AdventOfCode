@@ -1,5 +1,6 @@
 import importlib
 import sys
+sys.dont_write_bytecode = True
 
 class Colors:
     PINK = '\033[95m'
