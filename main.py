@@ -89,7 +89,7 @@ class AdventCode:
         if not has_args:
             self.user_interaction()
         self.get_module()
-        print '\n' + Colors.PINK + 'Starting problem {}-{}'.format(self.day, self.problem) + Colors.END + '\n'
+        print '\n' + Colors.PINK + 'Starting problem {}-{}'.format(self.day, self.problem) + Colors.END
         if self.testing:
             self.test()
         if self.input:
