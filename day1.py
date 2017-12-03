@@ -1,3 +1,6 @@
+import sys
+sys.dont_write_bytecode = True
+
 TEST_SET_1 = {
     1122: 3,
     1111: 4,
