@@ -15,7 +15,7 @@ class AdventCode:
 
     def __init__(self):
         self.solve = lambda x: x
-        self.test_values = {}
+        self.test_set = {}
         self.input = 0
         self.day = 1
         self.problem = 1
@@ -23,7 +23,7 @@ class AdventCode:
     
     def test(self):
         print '\n' + Colors.BLUE + 'Starting test session' + Colors.END + '\n'
-        for value, expected_result in self.test_values.iteritems():
+        for value, expected_result in self.test_set.iteritems():
             result = self.solve(value)
             if result == expected_result:
                 header = Colors.GREEN + 'OK' + Colors.END
@@ -80,7 +80,7 @@ class AdventCode:
     def get_module(self):
         module = importlib.import_module('day{}'.format(self.day))
         self.solve = module.solve_1 if self.problem == 1 else module.solve_2
-        self.test_values = module.TEST_VALUES_1 if self.problem == 1 else module.TEST_VALUES_2
+        self.test_set = module.TEST_SET_1 if self.problem == 1 else module.TEST_SET_2
         self.input = module.INPUT
 
     def run(self):

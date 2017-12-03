@@ -1,6 +1,6 @@
-TEST_VALUES_1 = {}
+TEST_SET_1 = {}
 
-TEST_VALUES_2 = {}
+TEST_SET_2 = {}
 
 INPUT = 0
 
