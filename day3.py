@@ -155,21 +155,25 @@ class Spiral:
         # compute the real value of an item in the grid
         # by adding the values of all its neighbors
         count = 0
-        if self.x < self.size - 1: # right neighbor
+        left = self.x > 0
+        right = self.x < self.size - 1
+        up = self.y > 0
+        down = self.y < self.size - 1
+        if right:
             count += self.values[self.grid[self.y][self.x+1]]
-        if self.x > 0: # left neighbor
+        if left:
             count += self.values[self.grid[self.y][self.x-1]]
-        if self.y < self.size - 1: # down neighbor
+        if down:
             count += self.values[self.grid[self.y+1][self.x]]
-        if self.y > 0: # up neighbor
+        if up:
             count += self.values[self.grid[self.y-1][self.x]]
-        if self.x < self.size - 1 and self.y < self.size - 1: # right down neighbor
+        if right and down:
             count += self.values[self.grid[self.y+1][self.x+1]]
-        if self.x < self.size - 1 and self.y > 0: # right up neighbor
+        if right and up:
             count += self.values[self.grid[self.y-1][self.x+1]]
-        if self.x > 0 and self.y < self.size - 1: # left down neighbor
+        if left and down:
             count += self.values[self.grid[self.y+1][self.x-1]]
-        if self.x > 0 and self.y > 0: # left up neighbor
+        if left and up:
             count += self.values[self.grid[self.y-1][self.x-1]]
         self.values[i] = count
     
