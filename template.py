@@ -5,7 +5,7 @@ TEST_SET_1 = {}
 
 TEST_SET_2 = {}
 
-INPUT = 0
+INPUT = open('template.txt', 'r').read()
 
 
 def solve_1(x):
