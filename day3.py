@@ -21,7 +21,7 @@ TEST_SET_2 = {
     23: 25,
 }
 
-INPUT = 265149
+INPUT = open('input3.txt', 'r').read()
 
 #
 # FIRST PROBLEM
@@ -67,6 +67,7 @@ def distance_to_spirale_center(size):
     return (size - 1) // 2
 
 def solve_1(x):
+    x = int(x)
     size = find_circle_size(x)
     side = find_side(x, size)
     return distance_to_array_center(x, side) + distance_to_spirale_center(size)
@@ -94,7 +95,7 @@ class Spiral:
         self.side = 'bottom'
 
         # draw the spiral
-        self.draw(goal_number)
+        self.draw(int(goal_number))
     
     def draw(self, goal_number):
         # will draw the spiral until the goal_number is exceeded in value

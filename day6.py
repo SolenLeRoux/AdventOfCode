@@ -9,7 +9,7 @@ TEST_SET_2 = {
     "0  2   7   0": 4,
 }
 
-INPUT = """0	5	10	0	11	14	13	4	11	8	8	7	1	4	12	11"""
+INPUT = open('input6.txt', 'r').read()
 
 def format_input(x):
     delimiter = '\t' if '\t' in x else ' '
