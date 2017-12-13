@@ -8,7 +8,12 @@ c dec -10 if a >= 1
 c inc -20 if c == 10""": 1
 }
 
-TEST_SET_2 = {}
+TEST_SET_2 = {
+    """b inc 5 if a > 1
+a inc 1 if b < 5
+c dec -10 if a >= 1
+c inc -20 if c == 10""": 10
+}
 
 INPUT = open('input8.txt', 'r').read()
 
@@ -66,4 +71,12 @@ def solve_1(x):
     return max(variables.values())
 
 def solve_2(x):
-    return x
+    x = parse_input(x)
+    variables = {}
+    global_max = 0
+    for line in x:
+        variables = execute_instruction_line(line, variables)
+        changed_value = variables[line['var']] if line['var'] in variables else 0
+        if global_max < changed_value:
+            global_max = changed_value
+    return global_max
