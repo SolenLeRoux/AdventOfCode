@@ -20,10 +20,13 @@ TEST_SET_2 = {
 
 INPUT = open('input13.txt', 'r').read()
 
+#
+# FIREWALL CLASS:
+# it is here to give you a step-by-step view of the whole grid
+# there are more efficient methods, but it's nice to have and I had fun coding it
+#
 
 class Firewall():
-    # This class is here to give you a step-by-step view of the whole grid
-    # there are more efficient methods, but it's nice
     def __init__(self, x):
         self.current_pos = -1
         self.table = []
@@ -95,12 +98,37 @@ def solve_1(x):
     firewall.run_through(delay=0)
     return firewall.severity
 
+#
+# More efficient method below
+# (needed for part 2)
+#
+
+def parse_input(x):
+    # returns a dict of {depth: height} representing the firewall
+    scanner_list = [l.split(': ') for l in x.split('\n') if l]
+    firewall = {}
+    for depth, height in scanner_list:
+        firewall[int(depth)] = int(height)
+    return firewall
+
+def got_caught(height, t):
+    # returns True if this scanner is in position 0 at time t
+    loop_duration = (height - 1) * 2 if height > 1 else 1
+    return t % loop_duration == 0
+
+def run_through_firewall_without_getting_caught(firewall, delay=0):
+    # returns True if it's possible to run through the firewall without getting
+    # caught when starting with a delay of {delay}
+    for depth, height in firewall.iteritems():
+        if got_caught(height, delay + depth):
+            return False
+    return True
+
+
 def solve_2(x):
-    original_firewall = Firewall(x)
-    firewall = copy.deepcopy(original_firewall)
-    delay = 0
-    while not firewall.run_through(without_getting_caught=True) and delay < 1000000:
-        delay += 1
-        original_firewall.move_scanners()
-        firewall = copy.deepcopy(original_firewall)
-    return delay
+    firewall = parse_input(x)
+    n = 10000000 # max number of attempts
+    for i in range(n):
+        if run_through_firewall_without_getting_caught(firewall, delay=i):
+            return i
+    return "Couldn't run through after {} attempts".format(n)
