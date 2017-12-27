@@ -60,5 +60,22 @@ def solve_1(x):
         dancers = dance(dancers, instruction)
     return dancers
 
+def get_cycle_length(dancers, instructions, max_loop=1000):
+    # returns the number of iteration needed to go back to
+    # the initial configuration
+    for i in range(max_loop):
+        for instruction in instructions:
+            dancers = dance(dancers, instruction)
+        if dancers == PROGRAMS:
+            return i + 1
+
+
 def solve_2(x):
-    return x
+    instructions = parseInput(x)
+    dancers = PROGRAMS
+    cycle_length = get_cycle_length(dancers, instructions)
+    remaining_iterations = 1 * 1000 * 1000 * 1000 % cycle_length
+    for i in range(remaining_iterations):
+        for instruction in instructions:
+            dancers = dance(dancers, instruction)
+    return dancers
