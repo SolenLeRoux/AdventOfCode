@@ -39,7 +39,7 @@ class Firewall():
         scanner_list = [l.split(': ') for l in x.split('\n') if l]
         for scanner in scanner_list:
             depth, height = scanner
-            for i in range(int(depth) - len(self.table)):
+            for _ in range(int(depth) - len(self.table)):
                 self.table.append([])
             self.table.append([' '] * int(height))
             self.table[int(depth)][0] = 'S'
@@ -76,14 +76,14 @@ class Firewall():
             self.table[depth][next_pos] = 'S'
 
     def display(self):
-        print ' '.join([' {} '.format(i) for i in range(self.depth)])
+        print(' '.join([' {} '.format(i) for i in range(self.depth)]))
         height = max([len(scanner) for scanner in self.table])
         for i in range(height):
             row = ['[{}]'.format(scanner[i]) if len(scanner) > i else '   ' for scanner in self.table]
-            print ' '.join(row)
+            print(' '.join(row))
 
     def run_through(self, without_getting_caught=False):
-        for i in range(self.depth):
+        for _ in range(self.depth):
             # uncomment next line if you want to print the firewall movements
             # self.display()
             self.move_packet()
@@ -95,7 +95,7 @@ class Firewall():
 
 def solve_1(x):
     firewall = Firewall(x)
-    firewall.run_through(delay=0)
+    firewall.run_through()
     return firewall.severity
 
 #
@@ -119,7 +119,7 @@ def got_caught(height, t):
 def run_through_firewall_without_getting_caught(firewall, delay=0):
     # returns True if it's possible to run through the firewall without getting
     # caught when starting with a delay of {delay}
-    for depth, height in firewall.iteritems():
+    for depth, height in firewall.items():
         if got_caught(height, delay + depth):
             return False
     return True

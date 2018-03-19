@@ -82,7 +82,7 @@ def parse_input(x):
 
 def populate_parents_and_children(nodes):
     # Replace the parent=Node and children=list_of_name by the actual nodes
-    for name, node in nodes.iteritems():
+    for _, node in nodes.items():
         if node.has_children():
             real_children = []
             for child_name in node.children:
@@ -94,7 +94,7 @@ def populate_parents_and_children(nodes):
 def find_root(nodes):
     # Go through all the nodes we have,
     # and return the first root (node without parent) found
-    for name, node in nodes.iteritems():
+    for name, node in nodes.items():
         if node.is_root():
             return name
     return 'no root found'
@@ -102,7 +102,7 @@ def find_root(nodes):
 def find_unbalanced_node(nodes):
     # Go through all the nodes we have, and return the first node with
     # unbalanced children but balanced grandchildren found
-    for name, node in nodes.iteritems():
+    for _, node in nodes.items():
         if not node.are_children_balanced() and node.are_grand_children_balanced():
             return node
     return 'no unbalanced node with children balanced found'
@@ -131,7 +131,7 @@ def find_right_balance(unbalanced_node):
 def print_children(node, tab=''):
     # Useful tool for debugging, display all the nodes with their children
     # and individual weight and total weight
-    print '\n', tab, node.name, node.weight, node.get_total_weight()
+    print('\n', tab, node.name, node.weight, node.get_total_weight())
     if node.has_children:
         for child in node.children:
             print_children(child, tab + '-')

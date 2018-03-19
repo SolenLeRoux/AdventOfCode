@@ -23,20 +23,20 @@ class AdventCode:
         self.testing = True
     
     def test(self):
-        print '\n' + Colors.BLUE + 'Starting test session' + Colors.END + '\n'
-        for value, expected_result in self.test_set.iteritems():
+        print('\n' + Colors.BLUE + 'Starting test session' + Colors.END + '\n')
+        for value, expected_result in self.test_set.items():
             result = self.solve(value)
             if result == expected_result:
                 header = Colors.GREEN + 'OK' + Colors.END
-                print '{}: {} returned {} as expected'.format(header, value, result)
+                print('{}: {} returned {} as expected'.format(header, value, result))
             else:
                 header = Colors.RED+ 'FAIL' + Colors.END
-                print '{}: {} returned {}, expected {}'.format(header, value, result, expected_result)
+                print('{}: {} returned {}, expected {}'.format(header, value, result, expected_result))
 
     def get_result(self):
-        print '\n' + Colors.BLUE + 'Getting result' + Colors.END + '\n'
+        print('\n' + Colors.BLUE + 'Getting result' + Colors.END + '\n')
         result = self.solve(self.input)
-        print result
+        print(result)
     
     def find_arg(self, terminal_args, arg):
         i = terminal_args.index(arg)
@@ -72,7 +72,7 @@ class AdventCode:
         assert int(day) in range(1,26), 'You must pick a number between 1 and 25'
         self.day = day
         problem = input('Which problem are you solving? (1/2) ')
-        assert (problem == 1 or problem == 2), 'You must enter 1 or 2'
+        assert (int(problem) == 1 or int(problem == 2)), 'You must enter 1 or 2'
         self.problem = problem
         testing = input('Do you want to test your solution? (y/n) ')
         assert (testing == 'y' or testing == 'n'), 'You must enter y or n'
@@ -89,11 +89,11 @@ class AdventCode:
         if not has_args:
             self.user_interaction()
         self.get_module()
-        print '\n' + Colors.PINK + 'Starting problem {}-{}'.format(self.day, self.problem) + Colors.END
+        print('\n' + Colors.PINK + 'Starting problem {}-{}'.format(self.day, self.problem) + Colors.END)
         if self.testing:
             self.test()
         if self.input:
             self.get_result()
-        print '\n' + Colors.PINK + 'Finished, exiting' + Colors.END + '\n'
+        print('\n' + Colors.PINK + 'Finished, exiting' + Colors.END + '\n')
 
 AdventCode().run()

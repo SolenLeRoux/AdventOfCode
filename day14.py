@@ -78,10 +78,10 @@ def get_neighbors(pos, to_be_visited):
 def solve_2(x):
     # Intermediary test, to debug with smaller inputs
     if SHOULD_DO_INTERMEDIARY_TEST:
-        for key, value in INTERMEDIARY_TEST_SET.iteritems():
+        for key, value in INTERMEDIARY_TEST_SET.items():
             result = get_regions_from_grid(value)
             assert len(result) == key, 'got {} expected {}'.format(len(result), key)
-            print 'test for', key, 'did ok'
+            print('test for', key, 'did ok')
     grid = get_grid(x)
     regions = get_regions_from_grid(grid)
     return len(regions)

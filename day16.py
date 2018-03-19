@@ -25,7 +25,7 @@ def dance(programs, instruction):
         return exchange(programs, instruction)
     if instruction[0] == 'p':
         return partner(programs, instruction)
-    print 'Instruction not found:', instruction
+    print('Instruction not found:', instruction)
 
 def spin(programs, instruction):
     number_to_spin = int(instruction.replace('s', '')) % len(programs)
@@ -75,7 +75,7 @@ def solve_2(x):
     dancers = PROGRAMS
     cycle_length = get_cycle_length(dancers, instructions)
     remaining_iterations = 1 * 1000 * 1000 * 1000 % cycle_length
-    for i in range(remaining_iterations):
+    for _ in range(remaining_iterations):
         for instruction in instructions:
             dancers = dance(dancers, instruction)
     return dancers

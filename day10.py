@@ -78,6 +78,6 @@ def solve_2(x):
     l = [i for i in range(256)]
     current_position = 0
     skip_size = 0
-    for i in range(64):
+    for _ in range(64):
         l, [current_position, skip_size] = go_through_instructions(l, instr, current_position, skip_size)
     return get_dense_harsh(l)

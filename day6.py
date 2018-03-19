@@ -18,7 +18,7 @@ def format_input(x):
 def empty_box(banks, start):
     count = banks[start]
     banks[start] = 0
-    for i in range(count):
+    for _ in range(count):
         start = start + 1 if start + 1 < len(banks) else 0
         banks[start] += 1
     return banks

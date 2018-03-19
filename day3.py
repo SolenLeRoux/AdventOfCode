@@ -181,7 +181,7 @@ class Spiral:
     def display_grid(self):
         # displays the grid in a better way than the default list of list
         for row in self.grid:
-            print ' '.join([str(self.values[x]) for x in row])
+            print(' '.join([str(self.values[x]) for x in row]))
 
 def solve_2(x):
     spiral = Spiral(x)

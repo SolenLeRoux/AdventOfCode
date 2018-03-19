@@ -27,7 +27,7 @@ class Spinlock(object):
         self.pos += 1
     
     def process(self, n):
-        for i in range(n):
+        for _ in range(n):
             self.move_forward()
             self.insert_value()
 
@@ -55,7 +55,7 @@ class AngrySpinlock(object):
         self.pos += 1
     
     def process(self, n):
-        for i in range(n):
+        for _ in range(n):
             self.move_forward()
             self.insert_value()
 

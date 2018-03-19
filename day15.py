@@ -57,7 +57,7 @@ def judge(generatorA, generatorB, n, with_verification=False):
             pass
         if n > 100 and i % (n // 100) == 0:
             # as this can take time, show the progression as a percentage
-            print i / (n // 100), '%'
+            print(i / (n // 100), '%')
     return count
 
 def get_last_16_bits(number):

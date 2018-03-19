@@ -47,7 +47,7 @@ def go_through_text(text, counting):
             depht -= 1
         if l == '!':
             should_ignore = True
-        # print 'letter', l, 'depht', depht, 'in_garbage', in_garbage, 'count', count
+        # print('letter', l, 'depht', depht, 'in_garbage', in_garbage, 'count', count)
     if counting == 'depht':
         return group_depht_count
     elif counting == 'garbage':

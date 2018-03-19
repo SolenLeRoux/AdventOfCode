@@ -40,7 +40,7 @@ def parse_input(x):
     return program_list
 
 def populate_direct_neighbors(program_list):
-    for name, program in program_list.iteritems():
+    for _, program in program_list.items():
         for neighbor_name in program.direct_neighbors_names:
             program.direct_neighbors.append(program_list[neighbor_name])
 

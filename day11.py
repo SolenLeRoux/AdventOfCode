@@ -46,7 +46,7 @@ def format_input(x):
     return x.replace('\n', '').split(',')
 
 def get_next_step_count(step, step_count):
-    for key, value in PATHS.iteritems():
+    for key, value in PATHS.items():
         if step in key.split('+'):
             other_step = [x for x in key.split('+') if x != step][0]
             if step_count[other_step] > 0:
