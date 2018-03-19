@@ -1,7 +1,7 @@
 # AdventCode
 
-This repo is a solution to the http://adventofcode.com/2017 event.
-There is two different problem for every day between the 1st and the 25th of December
+This repo is a solution to the [Advent Of Code](http://adventofcode.com/2017) event.
+There is two different problem for every day from the 1st to the 25th of December
 
 ## Getting Started
 
