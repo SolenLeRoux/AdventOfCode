@@ -65,8 +65,6 @@ class AdventCode:
         return has_args
     
     def user_interaction(self):
-        y = 'y'
-        n = 'n'
         # ask the user some questions
         day = input('Which day are you on? ')
         assert int(day) in range(1,26), 'You must pick a number between 1 and 25'
