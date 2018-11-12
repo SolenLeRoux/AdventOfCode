@@ -1,14 +1,19 @@
 # AdventCode
 
-This repo is a solution to the [Advent Of Code](http://adventofcode.com/2017) event.
-There is two different problem for every day from the 1st to the 25th of December
+This repo is my solution to the [Advent Of Code](http://adventofcode.com) challenge, where a different problem to solve is given everyday from the 1st to the 25th of December. I started solving them in 2017 using Python, and aim to continue in 2018 using Java.
 
 ## Getting Started
 
-The repo is made of one main.py file and a dayX.py file for every day of the challenge.
-There is a template.py file to help create the dayX.py files
+There is one folder per year, each one containing:
 
-### Prerequisites
+- an inputs subfolder containing the inputs in a .txt format
+- a test_cases subfolder containing the test cases in a .json format
+- a {language}_solutions containing the answers written in the specified language
+- a solve.{language} file that acts as the main function/class for this language
+
+### Python solutions
+
+#### Prerequisites
 
 These scripts are meant to be used with python 3.5+. Compatibility is not garanteed with earlier versions.
 
@@ -18,22 +23,14 @@ To know which version you are using, run:
 python --version
 ```
 
-### Installing
+#### Run the script
 
-You just need to download or clone this repo. You can use:
+Once you are in the right folder, there are two way to use the solve.py script: let the script ask you what the parameters are, or specify them in the command line.
 
-```terminal
-git clone git@github.com:Tishwa/AdventCode.git
-```
-
-### How to use
-
-There are two way to use the main.py script: let the script ask you what the parameters are, or add them in the command line.
-
-For the first option, symply run the main.py file with Python:
+For the first option, symply run the solve.py file with Python:
 
 ```terminal
-python main.py
+python solve.py
 ```
 
 You'll then be asked which day (1-25) and which problem (1-2) you want to use, and if you want to test the solution
@@ -47,10 +44,26 @@ python main.py -d 2 -p 2 -t y // day 2, problem 2, with tests
 
 The defaults values for these parameters are day 1, problem 1, with tests.
 
+#### Run the tests
+
+You can test all the test-cases by running the following command:
+
+```terminal
+python solve.py -all
+```
+
 ## Built With
 
 Python 3.6.4
 
+## Contributing
+
+Please read CONTRIBUTING.md for details, but basically I'll welcome any comment or criticism of my own work. Thank you!
+
 ## Author
 
 **Solen Le Roux--Couloigner** - [Tishwa](https://github.com/Tishwa)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
