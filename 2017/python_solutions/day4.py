@@ -3,18 +3,25 @@ sys.dont_write_bytecode = True
 
 
 def is_valid(p):
-    # assert there is no duplicate in the passphrase
-    # complexity: O(n2) with n the number of words
+    """
+    Asserts there is no duplicate in the passphrase
+    complexity: O(n^2) with n the number of words
+    """
     words = p.split('\t' if '\t' in p else ' ')
     return [w for w in words if words.count(w) > 1] == []
 
 def solve_1(x):
-    # complexity: O(n2 * p) with p the number of passphrases
-    # and n the number of word by passphrase
+    """
+    Returns the number of rows where a string doesn't appear twice
+    complexity: O(n^2 * p) with p the number of rows and n the number of string by row
+    """
     return len([p for p in x.split('\n') if is_valid(p)])
 
 def is_anagram(a, b):
-    # complexity: O(l2) with l the number of letter by word
+    """
+    Determines if a is an anagram of b or not
+    complexity: O(l2) with l the number of letter by word
+    """
     if len(a) != len(b):
         return False
     for l in a:
@@ -23,9 +30,10 @@ def is_anagram(a, b):
     return True
 
 def is_valid_2(p):
-    # assert there is no anagram in the passphrase
-    # complexity: O(n2 * l2) with n the number of word
-    # and l the number of letter by word
+    """
+    Asserts there is no anagram in the passphrase
+    complexity: O(n^2 * l^2) with n the number of words and l the number of letters
+    """
     words = p.split('\t' if '\t' in p else ' ')
     for i in range(len(words)):
         for j in range(i+1, len(words)):
@@ -34,8 +42,11 @@ def is_valid_2(p):
     return True
 
 def solve_2(x):
-    # complexity: O(p * n2 * l2) with
-    # p the number of pasphrases
-    # n the number of word by passphrase
-    # l the number of letter by word
+    """
+    Returns the number of valid passphrases, i.e. passphrases without anagrams
+    complexity: O(p * n^2 * l^2) with
+    p the number of pasphrases
+    n the number of word by passphrase
+    l the number of letter by word
+    """
     return len([p for p in x.split('\n') if is_valid_2(p)])
