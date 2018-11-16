@@ -1,0 +1,5 @@
+# IDE Configuration
+.vscode
+
+# Java
+*.class
