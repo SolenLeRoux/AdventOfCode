@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 def solve_1(x):
     """Returns the sum of all digits that match the next digit in the list (considered circular)"""
     x = str(x) + str(x)[0]

@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 class Spinlock(object):
     def __init__(self, step):
         self.step = step

@@ -1,6 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
 from python_solutions.day10 import solve_2 as get_knot_hash
 
 

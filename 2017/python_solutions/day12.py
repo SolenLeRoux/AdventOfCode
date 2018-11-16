@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 class Program():
     def __init__(self, name, communicate_with):
         self.name = name

@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 #
 # FIRST PROBLEM
 # no need to draw the spiral to solve it

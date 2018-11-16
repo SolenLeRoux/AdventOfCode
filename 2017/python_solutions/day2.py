@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 def format_input(x):
     """Transforms rows of numers written as strings into a list of lists of ints"""
     delimiter = '\t' if '\t' in x else ' ' # test_value doesn't use \t but input does

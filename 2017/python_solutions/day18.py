@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 def parse_input(x):
     delimiter = '\t' if '\t' in x else ' '
     return [l.split(delimiter) for l in x.split('\n') if l]

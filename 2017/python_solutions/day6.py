@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 def format_input(x):
     delimiter = '\t' if '\t' in x else ' '
     return [int(n) for n in x.split(delimiter) if n != '']

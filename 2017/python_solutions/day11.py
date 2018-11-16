@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 PATHS = {
     # read as a + b = c
     # ex: north + south = not moving

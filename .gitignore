@@ -1,5 +1,8 @@
 # IDE Configuration
 .vscode
 
+# Python
+*.pyc
+
 # Java
 *.class

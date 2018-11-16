@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 FACTORS = {
     'Generator A': 16807,
     'Generator B': 48271

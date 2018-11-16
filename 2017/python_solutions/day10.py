@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 def format_input(x):
     return [int(i) for i in x.split(',')]
 

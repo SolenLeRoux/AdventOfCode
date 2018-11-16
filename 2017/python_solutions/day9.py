@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 def go_through_text(text, counting):
     depht = 0
     in_garbage = False

@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 class Node():
     # One node, related to the others by the parent and children props
     def __init__(self, name, weight, parent=None, children=[]):

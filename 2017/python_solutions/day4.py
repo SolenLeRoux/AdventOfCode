@@ -1,7 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
-
 def is_valid(p):
     """
     Asserts there is no duplicate in the passphrase
