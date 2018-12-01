@@ -1,8 +1,6 @@
 # IDE Configuration
 .vscode
+.DS_Store
 
 # Python
 *.pyc
-
-# Java
-*.class
