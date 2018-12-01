@@ -8,12 +8,11 @@ There is one folder per year, each one containing:
 
 - an inputs subfolder containing the inputs in a .txt format
 - a test_cases subfolder containing the test cases in a .json format
-- a {language}_solutions containing the answers written in the specified language
-- a solve.{language} file that acts as the main function/class for this language
+- the solutions in a format depending on which language is used
 
 ### Python solutions
 
-#### Prerequisites
+#### Python Prerequisites
 
 These scripts are meant to be used with python 3.5+. Compatibility is not garanteed with earlier versions.
 
@@ -50,6 +49,41 @@ You can test all the test-cases by running the following command:
 
 ```terminal
 python solve.py -all
+```
+
+### Java solutions
+
+#### Java Prerequisites
+
+Have a working Java environment, which requires you to install the JDK. You can check if it your case by running the following command:
+
+```terminal
+java -version
+```
+
+You'll also need to have either Eclipse or Ant 1.8+ installed. You can download the Eclipse IDE [here](https://www.eclipse.org/downloads/packages/installer), or make sure you have the right version of Ant installed using the following command:
+
+```terminal
+ant -version
+```
+
+#### Running the Java solutions with Eclipse
+
+Since the Main class is built to accept command-line instructions, you will need to go to Run > Run Configurations > Arguments and add the following program arguments to the Main class:
+
+```java
+-d 1 -p 2 // for day 1 part 2
+```
+
+#### Running the Java solutions with Ant
+
+Using the command-lines, run the following commands:
+
+```terminal
+cd 2018
+ant compile jar
+ant run -Dday 1 -Dpart 2 // for day 1 part 2
+ant clean
 ```
 
 ## Built With
