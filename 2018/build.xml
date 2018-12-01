@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AdventCode2018" default="run" basedir=".">
+	<property name="day" value="1"/>
+	<property name="part" value="1"/>
+	
+  	<target name="clean">
+    	<delete dir="build"/>
+  	</target>
+	
+  	<target name="compile">
+    	<mkdir dir="build/classes"/>
+    	<javac srcdir="src" destdir="build/classes"/>
+  	</target>
+  		
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/AdventCode2018.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="adventcode2018.Main"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="build/jar/AdventCode2018.jar" fork="true">
+        	<arg value="-d"/>
+        	<arg value="${day}"/>
+			<arg value="-p"/>
+			<arg value="${part}"/>
+        </java>
+    </target>
+	
+</project>
