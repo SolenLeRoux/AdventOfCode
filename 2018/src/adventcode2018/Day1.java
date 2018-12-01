@@ -1,3 +1,4 @@
+package adventcode2018;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
