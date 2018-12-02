@@ -36,6 +36,8 @@ public class Main {
 		 */
 		if (day == 1) {
 			return new Day1();
+		} else if (day == 2) {
+			return new Day2();
 		} else {
 			throw new IllegalArgumentException("Day " + day + " is not available (yet)");
 		}
