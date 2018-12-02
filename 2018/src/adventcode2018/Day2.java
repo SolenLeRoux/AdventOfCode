@@ -34,7 +34,28 @@ public class Day2 extends Solution {
 	};
 	
 	public String solvePart2(List<String> input) {
-		return "nothing";
+		/**
+		 * Find the first two words with exactly one letter different
+		 * @input a list of words
+		 * @return the common letters between the two matching words
+		 */
+		String wordA, wordB, same;
+		int diff;
+		for (int i = 0; i < input.size() - 1; i++) {
+			for (int j = i + 1; j < input.size(); j++) {
+				wordA = input.get(i);
+				wordB = input.get(j);
+				same = "";
+				diff = 0;
+				for (int l = 0; l < wordA.length(); l++) {
+					if (wordA.charAt(l) != wordB.charAt(l)) {diff++;}
+					else {same += wordA.charAt(l);}
+					if (diff > 1) {break;}
+				}
+				if (diff == 1) {return same;}
+			}
+		}
+		return "not found";
 	};
 
 }
