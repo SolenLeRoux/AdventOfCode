@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="AdventCode2018" default="run" basedir=".">
+	
 	<property name="day" value="1"/>
 	<property name="part" value="1"/>
 	

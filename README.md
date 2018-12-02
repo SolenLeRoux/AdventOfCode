@@ -77,6 +77,8 @@ Since the Main class is built to accept command-line instructions, you will need
 
 #### Running the Java solutions with Ant
 
+/!\ Does not work anymore since JUnit tests were added, will probably be fixed in the future
+
 Using the command-lines, run the following commands:
 
 ```terminal
