@@ -8,8 +8,8 @@ public class Main {
 	private static Dictionary<String, String> decodeArguments(String[] args) {
 		/**
 		 * transforms user input into usable data
-		 * @params user input as a list of Strings
-		 * @returns a dict matching useful params to their value
+		 * @param user input as a list of Strings
+		 * @return a dict matching useful params to their value
 		 * TODO: support '-all'
 		 */
 		Dictionary<String, String> params = new Hashtable<String, String>();
@@ -30,8 +30,8 @@ public class Main {
 	private static Solution getSolution(int day) {
 		/**
 		 * gets the right Solution object depending on the day asked
-		 * @params the day requested
-		 * @returns a Solution object matching the day requested
+		 * @param the day requested
+		 * @return a Solution object matching the day requested
 		 * @throws IllegalArgumentException if the day requested is not found
 		 */
 		if (day == 1) {
