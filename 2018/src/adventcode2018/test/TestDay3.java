@@ -31,11 +31,15 @@ class TestDay3 extends TestDay {
 	void testSolvePart2_1() {
 		// Custom test case
 		int part = 2;
-		String[] testCase = {"abcde", "fghij", "klmno", "pqrst", "fguij", "axcye", "wvxyz"};
-		String expected = "fgij";
+		String[] testCase = {
+				"#1 @ 1,3: 4x4",
+				"#2 @ 3,1: 4x4", 
+				"#3 @ 5,5: 2x2"
+				};
+		String expected = "3";
 
 		// Solve the problem
-		// runTest(part, testCase, expected);
+		runTest(part, testCase, expected);
 	}
 
 }
