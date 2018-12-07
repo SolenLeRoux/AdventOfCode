@@ -1,0 +1,73 @@
+package adventcode2018.test;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import adventcode2018.Day4;
+
+class TestDay4 extends TestDay {
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+		solver = new Day4();
+	}
+
+	@Test
+	void testSolvePart1_1() {
+		// Custom test case
+		int part = 1;
+		String[] testCase = {
+				"[1518-11-01 00:00] Guard #10 begins shift",
+				"[1518-11-01 00:05] falls asleep",
+				"[1518-11-01 00:25] wakes up",
+				"[1518-11-01 00:30] falls asleep",
+				"[1518-11-01 00:55] wakes up",
+				"[1518-11-01 23:58] Guard #99 begins shift",
+				"[1518-11-02 00:40] falls asleep",
+				"[1518-11-02 00:50] wakes up",
+				"[1518-11-03 00:05] Guard #10 begins shift",
+				"[1518-11-03 00:24] falls asleep",
+				"[1518-11-03 00:29] wakes up",
+				"[1518-11-04 00:02] Guard #99 begins shift",
+				"[1518-11-04 00:36] falls asleep",
+				"[1518-11-04 00:46] wakes up",
+				"[1518-11-05 00:03] Guard #99 begins shift",
+				"[1518-11-05 00:45] falls asleep",
+				"[1518-11-05 00:55] wakes up"
+				};
+		String expected = "240";
+		
+		// Solve the problem
+		runTest(part, testCase, expected);
+	}
+
+	@Test
+	void testSolvePart2_1() {
+		// Custom test case
+		int part = 2;
+		String[] testCase = {
+				"[1518-11-01 00:00] Guard #10 begins shift",
+				"[1518-11-01 00:05] falls asleep",
+				"[1518-11-01 00:25] wakes up",
+				"[1518-11-01 00:30] falls asleep",
+				"[1518-11-01 00:55] wakes up",
+				"[1518-11-01 23:58] Guard #99 begins shift",
+				"[1518-11-02 00:40] falls asleep",
+				"[1518-11-02 00:50] wakes up",
+				"[1518-11-03 00:05] Guard #10 begins shift",
+				"[1518-11-03 00:24] falls asleep",
+				"[1518-11-03 00:29] wakes up",
+				"[1518-11-04 00:02] Guard #99 begins shift",
+				"[1518-11-04 00:36] falls asleep",
+				"[1518-11-04 00:46] wakes up",
+				"[1518-11-05 00:03] Guard #99 begins shift",
+				"[1518-11-05 00:45] falls asleep",
+				"[1518-11-05 00:55] wakes up"
+				};;
+		String expected = "4455";
+
+		// Solve the problem
+		runTest(part, testCase, expected);
+	}
+
+}
