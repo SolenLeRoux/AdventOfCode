@@ -7,3 +7,6 @@
 
 # Java
 /build/
+
+# Node
+node_modules
